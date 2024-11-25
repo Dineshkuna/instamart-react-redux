@@ -1,9 +1,10 @@
+import HeroSlide from "../main/heroslide";
 
 
 const Home = () => {
     return (
         <div>
-            <p>Home</p>
+            <HeroSlide/>
         </div>
     )
 }
