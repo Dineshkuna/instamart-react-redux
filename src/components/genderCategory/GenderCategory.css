@@ -1,0 +1,26 @@
+.categoryCard {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    padding: 25px 50px 60px 40px;
+}
+.categoryImg {
+    width: 400px;
+    border-radius: 10px;
+
+
+}
+.categoryMatter {
+    position: absolute;
+    top: 68px;
+    padding-left: 50px;
+}
+.categorytitle {
+    font-weight: bold;
+    font-size: 18px;
+}
+.categoryview {
+    color: darkgoldenrod;
+    font-weight: 500;
+    cursor: pointer;
+}

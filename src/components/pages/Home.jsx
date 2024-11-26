@@ -1,3 +1,5 @@
+
+import GenCategory from "../genderCategory/GenderCategory";
 import Info from "../infoData/info";
 import HeroSlide from "../main/heroslide";
 
@@ -8,6 +10,7 @@ const Home = () => {
         <div>
             <HeroSlide/>
             <Info />
+            <GenCategory/>
           
         </div>
     )
