@@ -13,24 +13,28 @@ const HeroSlide = () => {
         {data.map((item, index) => {
           return (
             <div key={index}>
-              <p> <span><IoIosRadioButtonOff /></span> {item}</p>
+              <p> <span className="radiobutton"><IoIosRadioButtonOff /></span> {item}</p>
             </div>
           );
         })}
         </div>
       </div>
       <div>
-        <img src={heroImg} alt="heroImg" />
-        <div>
-          <p>Dinesh | e-shop</p>
-          <p>WELCOM TO E-SHOP</p>
-          <p>Million + Products</p>
-          <button>Shop Now</button>
+      <div className="hero_img">
+        <img className="hero_img_size" src={heroImg} alt="heroImg" />
+        </div>
+        <div className="hero_mainheading">
+          <p className="hero_heading">Dinesh | e-shop</p>
+          <p className="hero_heading1">WELCOME TO E-SHOP</p>
+          <p className="hero_heading2">Million + Products</p>
+          <button className="hero_button">Shop Now</button>
         </div>
       </div>
       </div>
+      
     </div>
   );
 };
 
 export default HeroSlide;
+
