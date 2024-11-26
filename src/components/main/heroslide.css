@@ -14,10 +14,12 @@
   font-weight: bold;
   color: white;
   margin-bottom: 0px;
+  
 }
 .category_bar_name {
   background-color: antiquewhite;
   padding: 10px 10px 10px 10px;
+  cursor: pointer;
 }
 .radiobutton{
     color: red;
@@ -29,7 +31,7 @@
     left: 27rem;
 }
 .hero_img_size {
-  width: 65rem;
+  width: 66rem;
   height: 25rem;
   padding-top: 15px;
 }
@@ -51,4 +53,5 @@
   padding: 7px 24px;
   border-style: none;
   color: white;
+  cursor: pointer;
 }
