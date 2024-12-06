@@ -7,9 +7,15 @@
 .categoryImg {
     width: 400px;
     border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
 
 }
+.categoryImg:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
 .categoryMatter {
     position: absolute;
     top: 68px;
@@ -18,9 +24,16 @@
 .categorytitle {
     font-weight: bold;
     font-size: 18px;
+    
 }
 .categoryview {
     color: darkgoldenrod;
     font-weight: 500;
     cursor: pointer;
 }
+
+
+
+
+
+
