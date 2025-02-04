@@ -1,11 +1,24 @@
 // import React from 'react'
 
+import { useSelector } from "react-redux";
+import ProductCard from "../productCard.jsx/ProductCard";
+
 const Shop = () => {
+  const products = useSelector((state) => state.products.products || []);
+
   return (
     <div>
-      <p>Shop</p>
-    </div>
-  )
-}
+      <h2 style={{ textAlign: "center" }}>Shop</h2>
 
-export default Shop
+      <div>
+        {Array.isArray(products) &&
+          products
+            .map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+      </div>
+    </div>
+  );
+};
+
+export default Shop;
