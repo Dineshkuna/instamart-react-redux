@@ -1,25 +1,21 @@
-import Image1 from "./Images/bag.jpg";
-import Image2 from "./Images/sandle.jpg";
-import Image3 from "./Images/watch.jpg";
-import Image4 from "./Images/cap.jpg";
-import Image5 from "./Images/boot1.jpg";
-import Image6 from "./Images/dove.jpg";
-import Image7 from "./Images/headphone.jpg";
-import Image8 from "./Images/robot.jpg";
-import Image9 from "./Images/wwatch.jpg";
-import Image10 from "./Images/shirt.jpg";
-
-export const Categories = [
-  "Electronics",
-  "Fashion",
-  "Home & Kitchen",
-  "Beauty",
-  "Sports",
-  "Automotive",
-];
 
 
-export const mockData = [
+import Image1 from "./productImages/bag.jpg";
+import Image2 from "./productImages/sandle.jpg";
+import Image3 from "./productImages/watch.jpg";
+import Image4 from "./productImages/cap.jpg";
+import Image5 from "./productImages/boot1.jpg";
+import Image6 from "./productImages/dove.jpg";
+import Image7 from "./productImages/headphone.jpg";
+import Image8 from "./productImages/robot.jpg";
+import Image9 from "./productImages/wwatch.jpg";
+import Image10 from "./productImages/shirt.jpg";
+
+
+
+
+
+ const mockData = [
   {
     id: 1,
     image: Image9,
@@ -82,3 +78,5 @@ export const mockData = [
   },
 
 ];
+
+export default mockData;

@@ -1,4 +1,6 @@
-  const data = [
+
+  
+    const data = [
 
     "Electronics",
     "Fashion",
@@ -8,4 +10,11 @@
     "Automotive"
 ]
 
+
+
+
+
 export default data;
+
+
+

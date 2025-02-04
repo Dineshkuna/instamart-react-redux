@@ -1,5 +1,5 @@
-import men from './Images-main/Images-main/man.png'
-import women from './Images-main/Images-main/woman.png'
+import men from '../assets/Images-main/Images-main/man.png'
+import women from '../assets/Images-main/Images-main/woman.png'
 import kids from '../assets/Images-main/Images-main/kid.png'
 
 
