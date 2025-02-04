@@ -24,11 +24,11 @@ const Home = () => {
       <GenCategory />
 
       <div>
-        <h2>Top Products</h2>
+        <h2 style={{textAlign:"center"}}>Top Products</h2>
 
         <div>
           {Array.isArray(products) &&
-            products.map((product) => (
+            products.slice(0,5).map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
         </div>
