@@ -1,0 +1,98 @@
+footer {
+    background-color: #131921; /* Dark background */
+    color: #ffffff; /* White text */
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  footer div {
+    flex: 1;
+    margin: 0 20px;
+  }
+  
+  footer p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  footer ul li {
+    margin: 8px 0;
+  }
+  
+  footer ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  footer ul li a:hover {
+    color: #f05454; /* Light red on hover */
+  }
+  
+  footer div:nth-child(3) {
+    text-align: right;
+  }
+  
+  footer div:nth-child(3) p {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  footer div:nth-child(3) p:hover {
+    color: #f05454; /* Light red on hover */
+  }
+  
+  footer input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 200px;
+  }
+  
+  footer button {
+    background-color: #d62d20; /* Red button */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+  
+  footer button:hover {
+    background-color: #ff3b30; /* Lighter red on hover */
+  }
+  
+  footer div:last-child {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #ffffff1a;
+    padding-top: 10px;
+    font-size: 14px;
+  }
+  
+  footer div:last-child a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  footer div:last-child a:hover {
+    text-decoration: underline;
+  }
+  
