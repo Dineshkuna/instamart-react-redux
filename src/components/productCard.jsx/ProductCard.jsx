@@ -1,8 +1,22 @@
 import { FaStar } from "react-icons/fa";
-import PropTypes from "prop-types"; // Import PropTypes
+import PropTypes from "prop-types"; 
 import "./ProductCard.css";
+import { addToCart } from "../redux/cartSlice";
+import { useDispatch } from "react-redux";
+
+
 
 const ProductCard = ({ product }) => {
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (e, product) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dispatch(addToCart(product));
+    alert("Product Added Sucessfully")
+    
+
+  }
   return (
     <div className="product-main">
       <div className="product-list">
@@ -20,7 +34,7 @@ const ProductCard = ({ product }) => {
                 <FaStar className="star-icon" key={index} />
               ))}
             </div>
-            <div className="add-to-cart">
+            <div className="add-to-cart" onClick={(e)=>handleAddToCart(e, product)}>
               <span className="cart-icon">+</span>
               <span className="cart-text">Add to cart</span>
             </div>

@@ -7,18 +7,17 @@ import { useEffect } from "react";
 import ProductCard from "../productCard.jsx/ProductCard";
 import mockData from "../../assets/Images-main/Images-main/mockData";
 import Shop from "./Shop";
-import FooterCard from "../footer/Footer";
-
+// import FooterCard from "../footer/Footer";
 
 const Home = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products || []);
 
-  console.log("Products:", products); // Debugging
+  console.log("Products:", products); 
 
-  useEffect(()=> {
+  useEffect(() => {
     dispatch(setProducts(mockData));
-  },[dispatch]);
+  }, [dispatch]);
 
   return (
     <div>
@@ -44,9 +43,8 @@ const Home = () => {
         </div>
       </div>
 
-      <Shop />  
-      <FooterCard/> 
-      
+      <Shop />
+      {/* <FooterCard /> */}
     </div>
   );
 };

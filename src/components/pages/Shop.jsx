@@ -2,6 +2,7 @@
 
 import { useSelector } from "react-redux";
 import ProductCard from "../productCard.jsx/ProductCard";
+import FooterCard from "../footer/Footer";
 
 const Shop = () => {
   const products = useSelector((state) => state.products.products || []);
@@ -17,6 +18,7 @@ const Shop = () => {
               <ProductCard key={product.id} product={product} />
             ))}
       </div>
+      <FooterCard/>
     </div>
   );
 };

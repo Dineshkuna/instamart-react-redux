@@ -2,8 +2,11 @@ import { FaSearch } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import { useSelector } from "react-redux";
+
 
 const Navbar = () => {
+  const productsCart = useSelector(state => state.cart.productsCart)
   return (
     <div className="totalNavbar">
       <div className="main_navbar">
@@ -19,7 +22,8 @@ const Navbar = () => {
           </form>
         </div>
         <div className="carticon" >
-          <FaCartShopping></FaCartShopping>
+          <FaCartShopping/>
+          {productsCart.length > 0 ? productsCart.length : <></>}
         </div>
         <div className="loginRegister">
           <p> Login | Register </p>
