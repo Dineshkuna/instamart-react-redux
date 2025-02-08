@@ -1,5 +1,5 @@
 import data from "../../assets/categorydata";
-import heroImg from "../../assets/Images-main/Images-main/hero-page.png";
+import heroImg from "../../assets/Images-main/Images-main/Mis_Images/hero-page.png";
 import { IoIosRadioButtonOff } from "react-icons/io";
 import './heroslide.css'
 

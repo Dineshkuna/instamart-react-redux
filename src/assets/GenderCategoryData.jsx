@@ -1,6 +1,6 @@
-import men from '../assets/Images-main/Images-main/man.png'
-import women from '../assets/Images-main/Images-main/woman.png'
-import kids from '../assets/Images-main/Images-main/kid.png'
+import men from '../assets/Images-main/Images-main/Mis_Images/man.png'
+import women from '../assets/Images-main/Images-main/Mis_Images/woman.png'
+import kids from '../assets/Images-main/Images-main/Mis_Images/kid.png'
 
 
 

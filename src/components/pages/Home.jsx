@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import ProductCard from "../productCard.jsx/ProductCard";
 import mockData from "../../assets/Images-main/Images-main/mockData";
 import Shop from "./Shop";
-// import FooterCard from "../footer/Footer";
+
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -44,7 +44,8 @@ const Home = () => {
       </div>
 
       <Shop />
-      {/* <FooterCard /> */}
+      
+     
     </div>
   );
 };

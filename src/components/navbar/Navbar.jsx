@@ -3,6 +3,7 @@ import { FaCartShopping } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { useSelector } from "react-redux";
+// import Cart from "../pages/Cart";
 
 
 const Navbar = () => {
@@ -22,8 +23,14 @@ const Navbar = () => {
           </form>
         </div>
         <div className="carticon" >
-          <FaCartShopping/>
+          <Link to ='/cart'>
+          <FaCartShopping/> 
+          
+          <span className="cartCount">
           {productsCart.length > 0 ? productsCart.length : <></>}
+          </span>
+          </Link>
+          
         </div>
         <div className="loginRegister">
           <p> Login | Register </p>
