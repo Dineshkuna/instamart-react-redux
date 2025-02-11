@@ -4,10 +4,13 @@ import "./Cart.css";
 import FooterCard from "../footer/Footer";
 import { FaTrashAlt } from "react-icons/fa";
 import { useState } from "react";
+import Modal from "../modal/Modal";
+import ChangeAddress from "../changeAdress/ChangeAdress"; // Fixed incorrect import
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
-  const [address, setAddress] = useState("AndhraPradesh ,50043");
+  const [address, setAddress] = useState("Andhra Pradesh, 50043");
+  const [isModelOpen, setIsModelOpen] = useState(false);
 
   console.log("Cart State:", cart);
 
@@ -58,9 +61,10 @@ const Cart = () => {
 
                   <div className="cart-shipping">
                     <p>Shipping:</p>
-                    <p>Shipping to:</p>
-                    <span>{address}</span>
-                    <button className="change-address">Change Address</button>
+                    <p>Shipping to <span>{address}</span></p>
+                    <button className="change-address" onClick={() => setIsModelOpen(true)}>
+                      Change Address
+                    </button>
                   </div>
 
                   <div className="cart-total-price">
@@ -72,6 +76,13 @@ const Cart = () => {
                 </div>
               </div>
             </div>
+
+            {/* Corrected Modal Usage */}
+            {isModelOpen && (
+              <Modal isModelOpen={isModelOpen} setIsModelOpen={setIsModelOpen}>
+                <ChangeAddress setAddress={setAddress} setIsModelOpen={setIsModelOpen} />
+              </Modal>
+            )}
           </div>
         ) : (
           <div className="empty-cart">
