@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import EmptyCart from "../../assets/Images-main/Images-main/Mis_Images/emptycart.png";
 import "./Cart.css";
 import FooterCard from "../footer/Footer";
@@ -6,11 +6,17 @@ import { FaTrashAlt } from "react-icons/fa";
 import { useState } from "react";
 import Modal from "../modal/Modal";
 import ChangeAddress from "../changeAdress/ChangeAdress"; // Fixed incorrect import
+import { decreaseQuantity, increaseQuantity, removeFromCart } from "../redux/cartSlice";
+import { useNavigate } from "react-router-dom";
+
+
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [address, setAddress] = useState("Andhra Pradesh, 50043");
   const [isModelOpen, setIsModelOpen] = useState(false);
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   console.log("Cart State:", cart);
 
@@ -38,14 +44,16 @@ const Cart = () => {
                       </div>
                       <p className="cart-price">${product.price}</p>
                       <div className="cart-quantity">
-                        <button>-</button>
+                        <button onClick={() => dispatch(decreaseQuantity(product.id))}>-</button>
                         <p>{product.quantity}</p>
-                        <button>+</button>
+                        <button onClick={() => dispatch(increaseQuantity(product.id))}>+</button>
                       </div>
                       <p className="cart-subtotal">
                         ${(product.quantity * product.price).toFixed(2)}
                       </p>
-                      <button className="cart-remove">
+                      <button className="cart-remove"
+                      onClick={() => dispatch(removeFromCart(product.id))}>
+                        
                         <FaTrashAlt />
                       </button>
                     </div>
@@ -72,7 +80,10 @@ const Cart = () => {
                     <span>${cart.totalPrice.toFixed(2)}</span>
                   </div>
 
-                  <button className="checkout-btn">Proceed to Checkout</button>
+                  <button className="checkout-btn"
+                  onClick={() => navigate('/checkout')}
+                  
+                  >Proceed to Checkout</button>
                 </div>
               </div>
             </div>
