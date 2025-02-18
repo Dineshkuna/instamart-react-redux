@@ -3,14 +3,38 @@ import FooterCard from "../footer/Footer";
 import "./CheckOut.css";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-const CheckOut = () => {
+// eslint-disable-next-line react/prop-types
+const CheckOut = ({setOrder}) => {
   const [billingToggle, setBillingToggle] = useState(true);
   const [shippingToggle, setShippingToggle] = useState(true);
   const [paymentToggle, setPaymentToggle] = useState(true);
   const [paymentMethod, setPaymentMethod] = useState("cod");
+  const [shippingInfo, setShippingInfo] = useState({
+    name: '',
+    address: '',
+    city: '',
+    zip:''
+  });
+
+
+
 
   const cart = useSelector((state) => state.cart);
+  const navigate = useNavigate();
+
+  const handleOrder =() =>{
+    const newOrder = {
+      productsCart: cart.products,
+      orderNumber : "12344",
+      shippingInformation:{...shippingInfo} ,
+      totalPrice : cart.totalPrice
+    }
+    setOrder(newOrder)
+    navigate('/order-confirmation')
+
+  }
 
   return (
     <div>
@@ -70,20 +94,25 @@ const CheckOut = () => {
                 className="inputCheckout"
                 type="text"
                 placeholder="Enter Address"
+                onChange={(e) => setShippingInfo({...shippingInfo, address:e.target.value})}
               />
 
               <label>City</label>
               <input
                 className="inputCheckout"
                 type="email"
+                name="city"
                 placeholder="Enter City"
+                onChange={(e) => setShippingInfo({...shippingInfo, city:e.target.value})}
               />
 
               <label>Zip Code</label>
               <input
                 className="inputCheckout"
                 type="text"
+                name="zip"
                 placeholder="Enter Zip Code"
+                onChange={(e) => setShippingInfo({...shippingInfo, zip:e.target.value})}
               />
             </div>
           </form>
@@ -170,12 +199,13 @@ const CheckOut = () => {
               </div>
             </div>
           ))}
-
           <div className="total-price">
             <span>Total Price:</span>
             <span>${cart.totalPrice.toFixed(2)}</span>
           </div>
-          <button className="place-order-btn">Place Order</button>
+          <button className="place-order-btn"
+          onClick={handleOrder}
+          >Place Order</button>
         </div>
       </div>
 

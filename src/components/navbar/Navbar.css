@@ -45,6 +45,7 @@
   position: relative;
   right: 95px;
   bottom: 7px;
+  cursor: pointer;
 }
 .totalNavbar {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
