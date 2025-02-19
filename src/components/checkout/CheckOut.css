@@ -1,5 +1,5 @@
-.cart-container {
-    width: 50%;
+.cart-containerCheckout {
+    width: 90%;
     margin: 20px 0px 20px 48px;
     padding: 20px;
     border-radius: 8px;
@@ -53,7 +53,7 @@ label {
 }
 
 .inputCheckout {
-    width: 95%;
+    width: 96%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import "./ProductCard.css";
 import { addToCart } from "../redux/cartSlice";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 
 
@@ -18,8 +19,10 @@ const ProductCard = ({ product }) => {
 
   }
   return (
+    // eslint-disable-next-line react/prop-types
+    <Link to = {`/product/${product.id}`}>
     <div className="product-main">
-      <div className="product-list">
+      <div className="product-list"> 
         <div className="product-card">
           <div className="card">
             <img
@@ -42,6 +45,7 @@ const ProductCard = ({ product }) => {
         </div>
       </div>
     </div>
+    </Link>
   );
 };
 

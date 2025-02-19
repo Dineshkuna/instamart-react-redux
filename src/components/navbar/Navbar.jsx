@@ -1,18 +1,30 @@
 import { FaSearch } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Modal from "../modal/Modal";
 import Login from "../login/Login";
 import SignUp from "../signUp/SignUp";
 import { useState } from "react";
+import { setSearchTerm } from "../redux/productSlice";
 // import Cart from "../pages/Cart";
+
 
 
 const Navbar = () => {
   const [isModelOpen , setIsModelOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
+  const [search, setSearch] = useState()
+  const dispatch = useDispatch()
+  const navigate =useNavigate()
+
+  const handleSearch = (e) => {
+    e.preventDefault()
+    dispatch(setSearchTerm(search))
+    navigate('/filter-data')
+
+  }
 
   const openSignUp = () => {
     setIsLogin(false);
@@ -30,8 +42,8 @@ const Navbar = () => {
           <Link className="eshop1"  to="/">e-Shop</Link>
         </div>
         <div className="form">
-          <form>
-            <input className="searchbar" type="text" placeholder="Search" />
+          <form onSubmit={handleSearch}>
+            <input className="searchbar" type="text" placeholder="Search" onChange={(e) => setSearch(e.target.value)} />
             <div className="searchicon">
             <FaSearch></FaSearch>
             </div>

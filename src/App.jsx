@@ -10,6 +10,8 @@ import Cart from "./components/pages/Cart";
 import CheckOut from "./components/checkout/CheckOut";
 import { useState } from "react";
 import Orders from "./components/orders/Orders";
+import FilterData from "./components/filterData/FilterData";
+import ProductDetail from "./components/productDetail/ProductDetail";
 
 function App() {
   const[order, setOrder] = useState(null)
@@ -24,6 +26,8 @@ function App() {
         <Route path="/cart" element = {<Cart/>}></Route>
         <Route path="/checkout" element = {<CheckOut setOrder={setOrder}/>}></Route>
         <Route path="/order-confirmation" element = {<Orders order={order}/>}></Route>
+        <Route path="/filter-data" element = {<FilterData/>}></Route>
+        <Route path="/product/:id" element = {<ProductDetail/>}></Route>
       </Routes>
     </BrowserRouter>
   );
