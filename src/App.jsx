@@ -27,10 +27,12 @@ function App() {
         <Route path="/checkout" element = {<CheckOut setOrder={setOrder}/>}></Route>
         <Route path="/order-confirmation" element = {<Orders order={order}/>}></Route>
         <Route path="/filter-data" element = {<FilterData/>}></Route>
-        <Route path="/product/:id" element = {<ProductDetail/>}></Route>
+        <Route path="/product/:id" element={<ProductDetail />}></Route>
       </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
+
+
