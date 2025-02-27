@@ -101,7 +101,7 @@ const ProductDetail = () => {
     <div className="product-container">
       <div className="product-wrapper">
         {/* Product Image Section */}
-        <div className="product-image">
+        <div className="product-image-img">
           <img src={product.image} alt={product.name} />
         </div>
 
