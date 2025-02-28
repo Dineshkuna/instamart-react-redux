@@ -22,6 +22,7 @@ const Navbar = () => {
   const handleSearch = (e) => {
     e.preventDefault()
     dispatch(setSearchTerm(search))
+    setSearch("");
     navigate('/filter-data')
 
   }
@@ -43,7 +44,7 @@ const Navbar = () => {
         </div>
         <div className="form">
           <form onSubmit={handleSearch}>
-            <input className="searchbar" type="text" placeholder="Search" onChange={(e) => setSearch(e.target.value)} />
+            <input className="searchbar" type="text" placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value) } />
             <div className="searchicon">
             <FaSearch></FaSearch>
             </div>

@@ -49,31 +49,31 @@ import Image10 from "./productImages/shirt.jpg";
   {
     id: 6,
     image: Image6,
-    name: "Product 6",
+    name: "dove",
     price: 49.99,
   },
   {
     id: 7,
     image: Image7,
-    name: "Product 7",
+    name: "headphone",
     price: 49.99,
   },
   {
     id: 8,
     image: Image8,
-    name: "Product 8",
+    name: "robo",
     price: 49.99,
   },
   {
     id: 9,
     image: Image9,
-    name: "Product 9",
+    name: "smartwatch",
     price: 49.99,
   },
   {
     id: 10,
     image: Image10,
-    name: "Product 10",
+    name: "tshirt",
     price: 49.99,
   },
 
