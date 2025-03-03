@@ -1,0 +1,84 @@
+/* Main container */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: #f7f7f7;
+  }
+  
+  /* Content container */
+  .about-content {
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Image section */
+  .about-image {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Phone icon */
+  .phone-icon {
+    position: absolute;
+    bottom: 10px;
+    right: -10px;
+    background-color: #3498db;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Text section */
+  .about-text {
+    flex: 1;
+    padding-left: 20px;
+  }
+  
+  .about-text h2 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .about-text h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .about-text p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+  
+  /* Extra text section */
+  .extra-text {
+    margin-top: 20px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+  }
+  
