@@ -2,7 +2,7 @@ import './info.css'
 import infoitem from '../../assets/InfoItems'
 
 
-const Info =()=>{
+const Info = () => {
     return (
         <div>
             <div className='infocard'>
