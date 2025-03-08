@@ -20,9 +20,10 @@ const ProductCard = ({ product }) => {
   };
 
   return (
+    
     // eslint-disable-next-line react/prop-types
     <Link to={`/product/${product.id}`}>
-      <div className="inline-flex">
+      <div className="inline-flex ">
         {/* Flex container with wrapping */}
         <div className="flex flex-wrap justify-center gap-5 p-5">
           <div className="flex justify-center items-center">

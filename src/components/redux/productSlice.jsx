@@ -23,11 +23,8 @@ const productSlice = createSlice({
   },
   
 });
-
-export default productSlice.reducer;
 export const { setProducts, setSearchTerm } = productSlice.actions;
-
-
+export default productSlice.reducer;
 
 
 // 

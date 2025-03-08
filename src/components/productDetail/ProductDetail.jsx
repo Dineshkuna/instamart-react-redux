@@ -39,7 +39,7 @@ const ProductDetail = () => {
             <img
               src={product.image}
               alt={product.name}
-              className="w-48 h-64 rounded-lg object-cover" // Reduced image size
+              className="w-48 h-64 rounded-lg object-contain" // Reduced image size
             />
           </div>
 

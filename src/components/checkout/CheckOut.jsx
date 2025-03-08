@@ -22,7 +22,7 @@ const CheckOut = ({ setOrder }) => {
 
   const handleOrder = () => {
     const newOrder = {
-      productsCart: cart.products,
+      productsCart: cart.productsCart,
       orderNumber: "12344",
       shippingInformation: { ...shippingInfo },
       totalPrice: cart.totalPrice,
@@ -224,7 +224,6 @@ const CheckOut = ({ setOrder }) => {
           </button>
         </div>
       </div>
-
       <FooterCard />
     </div>
   );
