@@ -1,55 +1,59 @@
 import { FaStar } from "react-icons/fa";
-import PropTypes from "prop-types"; 
-import "./ProductCard.css";
+import PropTypes from "prop-types";
 import { addToCart } from "../redux/cartSlice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+// import './ProductCard.css'
 
 
 
 const ProductCard = ({ product }) => {
+
+ 
   const dispatch = useDispatch();
 
   const handleAddToCart = (e, product) => {
     e.preventDefault();
     e.stopPropagation();
     dispatch(addToCart(product));
-    alert("Product Added Sucessfully")
-    
+    alert("Product Added Successfully");
+  };
 
-  }
   return (
     // eslint-disable-next-line react/prop-types
-    <Link to = {`/product/${product.id}`}>
-    <div className="product-main">
-      <div className="product-list"> 
-        <div className="product-card">
-          <div className="card">
-            <img
-              src={product.image}
-              alt={product.name}
-              className="product-image"
-            />
-            <h3 className="product-name">{product.name}</h3>
-            <p className="product-price">{product.price}</p>
-            <div className="rating">
-              {[...Array(5)].map((_, index) => (
-                <FaStar className="star-icon" key={index} />
-              ))}
-            </div>
-            <div className="add-to-cart" onClick={(e)=>handleAddToCart(e, product)}>
-              <span className="cart-icon">+</span>
-              <span className="cart-text">Add to cart</span>
+    <Link to={`/product/${product.id}`}>
+      <div className="inline-flex">
+        {/* Flex container with wrapping */}
+        <div className="flex flex-wrap justify-center gap-5 p-5">
+          <div className="flex justify-center items-center">
+            <div className="w-52 h-[350px] bg-white p-4 shadow-md rounded-lg relative border border-gray-300 transition-transform duration-300 ease-in-out flex flex-col items-center hover:transform hover:scale-105 ">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full h-36 object-contain mb-3"
+              />
+              <h3 className="text-lg font-semibold text-center">{product.name}</h3>
+              <p className="text-gray-500 text-sm">{product.price}</p>
+              <div className="flex items-center mt-2">
+                {[...Array(5)].map((_, index) => (
+                  <FaStar className="text-yellow-400 text-base" key={index} />
+                ))}
+              </div>
+              <div
+                className="absolute bottom-4 right-2 flex items-center justify-center w-8 h-8 bg-red-600 text-white text-sm rounded-full cursor-pointer transition-all duration-300 ease-in-out overflow-hidden whitespace-nowrap hover:w-24 hover:rounded-xl hover:bg-red-700"
+                onClick={(e) => handleAddToCart(e, product)}
+              >
+                <span className="block">+</span>
+                <span className="hidden hover:block ml-2">Add to cart</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </Link>
   );
 };
 
-// Add PropTypes validation
 ProductCard.propTypes = {
   product: PropTypes.shape({
     image: PropTypes.string.isRequired,

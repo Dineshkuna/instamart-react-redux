@@ -25,18 +25,18 @@ const Home = () => {
       <Info />
       <GenCategory />
 
-      <div className="container mx-auto py-12">
+      <div >
         <h2
-          className="text-2xl font-bold mb-6 text-center"
+          
           style={{ textAlign: "center" }}
         >
-          Top Products
+          <b className=" text-xl">Top Products</b>
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cole-2 md:grid-cols-4 lg:grid-cols-5 gap-6 cursor-pointer">
+        <div >
           {Array.isArray(products) &&
             products
-              .slice(0, 5)
+              .slice(0, 6)
               .map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}

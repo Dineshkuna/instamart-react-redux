@@ -12,6 +12,7 @@ import { useState } from "react";
 import Orders from "./components/orders/Orders";
 import FilterData from "./components/filterData/FilterData";
 import ProductDetail from "./components/productDetail/ProductDetail";
+import './App.css'
 
 function App() {
   const[order, setOrder] = useState(null)

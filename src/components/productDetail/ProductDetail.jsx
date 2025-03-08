@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addToCart } from "../redux/cartSlice";
-import "./ProductDetail.css";
 import FooterCard from "../footer/Footer";
 
 const ProductDetail = () => {
@@ -27,54 +26,72 @@ const ProductDetail = () => {
     }
   };
 
-  if (!product) return <div className="loading-text">Product not found or loading...</div>;
+  if (!product)
+    return <div className="text-center text-xl font-bold mt-8">Product not found or loading...</div>;
 
   return (
-    <div className="product-container">
-      <div className="product-wrapper">
-        {/* Product Image Section */}
-        <div className="product-image-img">
-          <img src={product.image} alt={product.name} />
-        </div>
-
-        {/* Product Details Section */}
-        <div className="product-details">
-          <h2 className="product-title">{product.name}</h2>
-          <p className="product-price">${product.price}</p>
-
-          {/* Quantity Input */}
-          <div className="quantity-section">
-            <input
-              type="number"
-              id="quantity"
-              min="1"
-              value={quantity}
-              onChange={(e) => setQuantity(parseInt(e.target.value))}
-              className="quantity-input"
+    <div className="bg-gray-100 min-h-screen p-6">
+      <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        {/* Product Image and Details Wrapper */}
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          {/* Product Image Section */}
+          <div className="flex-1 flex justify-center">
+            <img
+              src={product.image}
+              alt={product.name}
+              className="w-48 h-64 rounded-lg object-cover" // Reduced image size
             />
           </div>
 
-          {/* Add to Cart Button */}
-          <button onClick={handleAddToCart} className="add-to-cart-btn">
-            Add to Cart
-          </button>
+          {/* Product Details Section */}
+          <div className="flex-1">
+            <h2 className="text-2xl font-bold text-gray-800 mb-2">{product.name}</h2>
+            <p className="text-xl font-bold text-red-600 mb-4">${product.price}</p>
 
-          {/* Extra Information */}
-          <div className="extra-info">
-            <p className="info-item">🚚 Delivery & Return</p>
-            <p className="info-item">❓ Ask a Question</p>
+            {/* Quantity Input */}
+            <div className="mb-6">
+              <label htmlFor="quantity" className="block text-sm font-medium text-gray-700">
+                Quantity
+              </label>
+              <input
+                type="number"
+                id="quantity"
+                min="1"
+                value={quantity}
+                onChange={(e) => setQuantity(parseInt(e.target.value))}
+                className="w-20 p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+              />
+            </div>
+
+            {/* Add to Cart Button */}
+            <button
+              onClick={handleAddToCart}
+              className="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition-colors duration-300"
+            >
+              Add to Cart
+            </button>
+
+            {/* Extra Information */}
+            <div className="mt-6 space-y-2">
+              <p className="text-sm text-gray-600 flex items-center gap-2">
+                <span>🚚</span> Delivery & Return
+              </p>
+              <p className="text-sm text-gray-600 flex items-center gap-2">
+                <span>❓</span> Ask a Question
+              </p>
+            </div>
           </div>
+        </div>
+
+        {/* Product Description */}
+        <div className="mt-8">
+          <h3 className="text-xl font-bold text-gray-800 mb-4">Product Description</h3>
+          <p className="text-gray-600">Product description will go here.</p>
         </div>
       </div>
 
-      {/* Product Description */}
-      <div className="product-description">
-        <h3>Product Description</h3>
-        <p>Product description will go here.</p>
-      </div>
-      <br />
-      <br />
-      <FooterCard/>
+      {/* Footer */}
+      <FooterCard />
     </div>
   );
 };

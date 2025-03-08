@@ -9,7 +9,7 @@ const Shop = () => {
 
   return (
     <div>
-      <h2 style={{ textAlign: "center" }}>Shop</h2>
+      <h2 style={{ textAlign: "center" }}> <b className=" text-xl">Shop</b> </h2>
 
       <div>
         {Array.isArray(products) &&
