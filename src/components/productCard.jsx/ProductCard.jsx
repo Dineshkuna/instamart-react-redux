@@ -39,13 +39,14 @@ const ProductCard = ({ product }) => {
                   <FaStar className="text-yellow-400 text-base" key={index} />
                 ))}
               </div>
-              <div
-                className="absolute bottom-4 right-2 flex items-center justify-center w-8 h-8 bg-red-600 text-white text-sm rounded-full cursor-pointer transition-all duration-300 ease-in-out overflow-hidden whitespace-nowrap hover:w-24 hover:rounded-xl hover:bg-red-700"
+                            <div
+                className="absolute bottom-4 right-2 flex items-center justify-center w-8 h-8 bg-red-600 text-white text-sm rounded-full cursor-pointer transition-all duration-300 ease-in-out overflow-hidden whitespace-nowrap group hover:w-24 hover:rounded-xl hover:bg-red-700"
                 onClick={(e) => handleAddToCart(e, product)}
               >
-                <span className="block">+</span>
-                <span className="hidden hover:block ml-2">Add to cart</span>
+                <span className="block group-hover:hidden">+</span>
+                <span className="hidden group-hover:block ml-2">Add to cart</span>
               </div>
+
             </div>
           </div>
         </div>
