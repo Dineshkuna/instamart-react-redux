@@ -8,16 +8,20 @@ const Shop = () => {
   const products = useSelector((state) => state.products.products || []);
 
   return (
+    
     <div>
+      <br />
       <h2 style={{ textAlign: "center" }}> <b className=" text-xl">Shop</b> </h2>
 
-      <div>
+      <div className="flex flex-wrap justify-center">
         {Array.isArray(products) &&
           products
             .map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
       </div>
+      <br />
+      <br /><br />
       <FooterCard/>
     </div>
   );

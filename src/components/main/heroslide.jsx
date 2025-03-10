@@ -1,8 +1,11 @@
 
 
+import { Link } from "react-router-dom";
 import data from "../../assets/categorydata";
 import heroImg from "../../assets/Images-main/Images-main/Mis_Images/hero-page.png";
 import { IoIosRadioButtonOff } from "react-icons/io";
+
+
 
 const HeroSlide = () => {
   return (
@@ -12,17 +15,25 @@ const HeroSlide = () => {
         <p className="p-2 pl-2 pr-20 bg-red-600 font-bold text-white mb-0">
           SHOP BY CATEGORIES
         </p>
+        
         <div className="bg-amber-200 p-4 cursor-pointer">
+          
+        
+          
           
           {data.map((item, index) => (
             
             <div key={index} className="flex items-center space-x-2 py-2">
               
               <IoIosRadioButtonOff className="text-red-600" />
-              
+              <Link to='/shop'>
               <p>{item}</p>
+              </Link>
+              
+              
               
             </div>
+            
           ))}
         </div>
       </div>
@@ -38,9 +49,11 @@ const HeroSlide = () => {
           <p className="text-white-300 text-lg italic">Dinesh | e-shop</p>
           <p className="text-2xl font-bold mt-2 text-white">WELCOME TO E-SHOP</p>
           <p className="text-xl font-bold mt-2 text-white">Million + Products</p>
+          <Link to='/shop'>
           <button className="bg-red-600 px-6 py-2 text-white cursor-pointer mt-4 hover:bg-red-700">
             Shop Now
           </button>
+          </Link>
         </div>
       </div>
     </div>

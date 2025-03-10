@@ -33,7 +33,7 @@ const Home = () => {
           <b className=" text-xl">Top Products</b>
         </h2>
 
-        <div >
+        <div className="flex flex-wrap justify-center">
           {Array.isArray(products) &&
             products
               .slice(0, 6)
@@ -44,6 +44,7 @@ const Home = () => {
       </div>
 
       <Shop />
+      
     </div>
   );
 };

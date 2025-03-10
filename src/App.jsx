@@ -14,6 +14,7 @@ import FilterData from "./components/filterData/FilterData";
 import ProductDetail from "./components/productDetail/ProductDetail";
 import './App.css'
 
+
 function App() {
   const[order, setOrder] = useState(null)
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/order-confirmation" element = {<Orders order={order}/>}></Route>
         <Route path="/filter-data" element = {<FilterData/>}></Route>
         <Route path="/product/:id" element={<ProductDetail />}></Route>
+        
       </Routes>
     </BrowserRouter>
   );

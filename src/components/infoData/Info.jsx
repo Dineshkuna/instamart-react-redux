@@ -1,3 +1,4 @@
+
 import infoitem from '../../assets/InfoItems';
 
 const Info = () => {
@@ -10,7 +11,9 @@ const Info = () => {
         >
           {/* Centered Icon */}
           <div className="flex justify-center">
+            
             <p className="text-red-500 text-3xl">{infoItem.icon}</p>
+            
           </div>
           <p className="text-xl font-bold mt-4">{infoItem.title}</p>
           <p className="text-gray-600 font-light mt-2">{infoItem.description}</p>
